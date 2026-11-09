@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Seeker dashboard | HomeFind{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/properties.js') }}" defer></script>{% endblock %}
+{% block content %}
+<section class="dashboard-wrap">
+  <div class="dashboard-heading"><div><span class="eyebrow">PROPERTY SEEKER</span><h1>Find your <em>next home.</em></h1><p>Welcome, {{ session.get('full_name') }}. Explore the latest property listings.</p></div><span class="role-pill">Seeker account</span></div>
+  <div class="search-panel"><label>Search by location<input id="searchLocation" type="search" placeholder="e.g. Kilimani, Nairobi"></label><label>Maximum price (KES)<input id="searchPrice" type="number" min="0" placeholder="Any budget"></label><button class="btn btn-primary" id="clearFilters" type="button">Clear filters</button></div>
+  <div class="listing-heading"><div><span class="eyebrow">AVAILABLE HOMES</span><h2>Property listings</h2></div><span id="listingCount" class="muted"></span></div>
+  <div id="propertyGrid" class="property-grid"><p class="muted">Loading properties…</p></div>
+  <p id="propertyMessage" class="form-message" role="status"></p>
+</section>
+{% endblock %}

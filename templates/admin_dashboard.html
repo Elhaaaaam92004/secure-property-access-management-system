@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Admin dashboard | HomeFind{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/properties.js') }}" defer></script>{% endblock %}
+{% block content %}
+<section class="dashboard-wrap">
+  <div class="dashboard-heading"><div><span class="eyebrow">ADMINISTRATION</span><h1>System <em>overview.</em></h1><p>Welcome, {{ session.get('full_name') }}. Review registered HomeFind accounts.</p></div><span class="role-pill role-admin">Administrator</span></div>
+  <div class="admin-summary"><div class="summary-card"><span>REGISTERED USERS</span><strong id="userTotal">—</strong></div><div class="summary-card"><span>SEEKERS</span><strong id="seekerTotal">—</strong></div><div class="summary-card"><span>OWNERS</span><strong id="ownerTotal">—</strong></div></div>
+  <div class="listing-heading"><div><span class="eyebrow">ACCOUNT MANAGEMENT</span><h2>Registered users</h2></div><span id="adminMessage" class="muted"></span></div>
+  <div class="table-wrap"><table class="users-table"><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Date registered</th></tr></thead><tbody id="usersTableBody"><tr><td colspan="4">Loading users…</td></tr></tbody></table></div>
+</section>
+{% endblock %}

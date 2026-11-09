@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}HomeFind | Find your next home{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">A simpler way to find a place</span>
+    <h1>Your next place<br><em>starts here.</em></h1>
+    <p>Explore property listings, compare options and connect with property owners in one convenient place.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="{{ url_for('register_page') }}">Get started <span>→</span></a><a class="text-link" href="{{ url_for('login_page') }}">I already have an account</a></div>
+    <div class="hero-note"><span class="note-dot"></span> One place for seekers, owners and administrators</div>
+  </div>
+  <div class="hero-art" aria-label="Decorative home illustration">
+    <div class="art-card art-card-back"><span>FIND YOUR SPACE</span><div class="art-window"></div></div>
+    <div class="art-card art-card-front"><div class="art-sun"></div><div class="art-roof"></div><div class="art-house"><div class="art-door"></div><div class="art-window-small"></div></div><div class="art-ground"></div></div>
+    <div class="floating-tag"><span>⌂</span><div><b>A place to belong</b><small>Start your search today</small></div></div>
+  </div>
+</section>
+<section class="features section-wrap">
+  <div class="section-heading"><span class="eyebrow">HOW IT WORKS</span><h2>Everything you need,<br><em>in one place.</em></h2><p>Whether you're looking for a home or sharing a property, HomeFind keeps the process organised.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card"><span class="feature-icon">⌕</span><h3>Explore properties</h3><p>Browse available listings and narrow your search by location, property type or budget.</p></article>
+    <article class="feature-card"><span class="feature-icon">⌂</span><h3>Manage listings</h3><p>Property owners can create, update and manage their own listings from one dashboard.</p></article>
+    <article class="feature-card"><span class="feature-icon">✓</span><h3>Protected access</h3><p>Separate seeker, owner and administrator accounts help keep actions within the right roles.</p></article>
+  </div>
+</section>
+<section class="bottom-cta"><div><span class="eyebrow">READY WHEN YOU ARE</span><h2>Find your next place with confidence.</h2></div><a class="btn btn-light" href="{{ url_for('register_page') }}">Create your account →</a></section>
+{% endblock %}

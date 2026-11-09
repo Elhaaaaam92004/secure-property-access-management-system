@@ -1,0 +1,19 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+
+# Private credentials and database
+.secret_key
+.env
+database.db
+*.db
+*.sqlite
+*.sqlite3
+
+# System files
+.DS_Store
+Thumbs.db

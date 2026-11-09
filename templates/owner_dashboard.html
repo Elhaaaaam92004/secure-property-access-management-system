@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Owner dashboard | HomeFind{% endblock %}
+{% block scripts %}<script>window.CURRENT_USER_ID = {{ session.get("user_id")|tojson }};</script><script src="{{ url_for('static', filename='js/properties.js') }}" defer></script>{% endblock %}
+{% block content %}
+<section class="dashboard-wrap">
+  <div class="dashboard-heading"><div><span class="eyebrow">PROPERTY OWNER</span><h1>Manage your <em>listings.</em></h1><p>Welcome, {{ session.get('full_name') }}. Add a property or keep your existing listings up to date.</p></div><span class="role-pill">Owner account</span></div>
+  <div class="owner-layout">
+    <section class="form-panel owner-form-panel"><div class="form-heading"><span class="eyebrow" id="propertyFormEyebrow">NEW LISTING</span><h2 id="propertyFormTitle">Add a property</h2><p>Fields marked with * are required.</p></div>
+      <form id="propertyForm" class="form-stack">
+        <input type="hidden" id="propertyId">
+        <label>Property title *<input id="propertyTitle" maxlength="150" required placeholder="e.g. Two-bedroom apartment"></label>
+        <label>Description *<textarea id="propertyDescription" maxlength="2000" rows="4" required placeholder="Describe the property and its features"></textarea></label>
+        <label>Location *<input id="propertyLocation" maxlength="150" required placeholder="e.g. Kilimani, Nairobi"></label>
+        <label>Price per month (KES) *<input id="propertyPrice" type="number" min="0" step="0.01" required placeholder="e.g. 45000"></label>
+        <button class="btn btn-primary btn-full" id="savePropertyButton" type="submit">Publish listing →</button>
+        <button class="btn btn-outline btn-full hidden" id="cancelEditButton" type="button">Cancel editing</button>
+        <p class="form-message" id="ownerMessage" role="status"></p>
+      </form>
+    </section>
+    <section class="owner-listings"><div class="listing-heading"><div><span class="eyebrow">YOUR PROPERTIES</span><h2>Your listings</h2></div><span id="listingCount" class="muted"></span></div><div id="propertyGrid" class="owner-property-list"><p class="muted">Loading your listings…</p></div></section>
+  </div>
+</section>
+{% endblock %}

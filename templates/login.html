@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Log in | HomeFind{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>{% endblock %}
+{% block content %}
+<section class="auth-layout login-layout">
+  <div class="auth-aside"><span class="eyebrow">WELCOME BACK</span><h1>Good to have<br><em>you here.</em></h1><p>Log in to continue where you left off and access your HomeFind dashboard.</p><div class="aside-stamp">✦ <span>Your space.<br>Your next step.</span></div></div>
+  <div class="form-panel"><div class="form-heading"><span class="eyebrow">YOUR ACCOUNT</span><h2>Log in</h2><p>New to HomeFind? <a href="{{ url_for('register_page') }}">Create an account</a></p></div>
+    <form id="loginForm" class="form-stack">
+      <label>Email address<input name="email" id="loginEmail" type="email" placeholder="you@example.com" required></label>
+      <label>Password<input name="password" id="loginPassword" type="password" placeholder="Your password" required></label>
+      <button class="btn btn-primary btn-full" type="submit">Log in <span>→</span></button>
+      <p class="form-message" id="loginMessage" role="status"></p>
+    </form>
+  </div>
+</section>
+{% endblock %}

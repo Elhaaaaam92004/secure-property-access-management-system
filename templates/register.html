@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Create account | HomeFind{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/auth.js') }}" defer></script>{% endblock %}
+{% block content %}
+<section class="auth-layout">
+  <div class="auth-aside"><span class="eyebrow">JOIN HOMEFIND</span><h1>Make room for<br><em>what's next.</em></h1><p>Create an account to explore homes or manage your property listings.</p><div class="aside-stamp">⌂ <span>Find a place<br>to call yours.</span></div></div>
+  <div class="form-panel"><div class="form-heading"><span class="eyebrow">GET STARTED</span><h2>Create your account</h2><p>Already registered? <a href="{{ url_for('login_page') }}">Log in</a></p></div>
+    <form id="registerForm" class="form-stack">
+      <label>Full name<input name="full_name" id="fullName" type="text" maxlength="100" placeholder="Your full name" required></label>
+      <label>Email address<input name="email" id="registerEmail" type="email" maxlength="150" placeholder="you@example.com" required></label>
+      <label>Password<input name="password" id="registerPassword" type="password" minlength="8" maxlength="128" placeholder="At least 8 characters" required></label>
+      <label>Account type<select name="role" id="registerRole" required><option value="">Choose account type</option><option value="seeker">Property seeker</option><option value="owner">Property owner</option></select></label>
+      <button class="btn btn-primary btn-full" type="submit">Create account <span>→</span></button>
+      <p class="form-message" id="registerMessage" role="status"></p>
+    </form>
+  </div>
+</section>
+{% endblock %}
